@@ -57,10 +57,8 @@ jobs:
       - name: 批量编码 HEVC-with-Alpha（Swift 原生方案）
         run: |
           chmod +x scripts/encode_hevc_alpha.sh
-          # 素材源：本仓库 dsh-pet/assets/webm；输出直接写回 dsh-pet/assets/mov
-          mkdir -p dsh-pet/assets/mov dsh-pet/assets/webm-test
-          cp dsh-pet/assets/webm/三球抛接.webm dsh-pet/assets/webm/下五子棋.webm dsh-pet/assets/webm/东张西望.webm dsh-pet/assets/webm-test/
-          ./scripts/encode_hevc_alpha.sh dsh-pet/assets/webm-test dsh-pet/assets/mov
+          mkdir -p dsh-pet/assets/mov
+          ./scripts/encode_hevc_alpha.sh dsh-pet/assets/webm-alpha dsh-pet/assets/mov
           echo "mov 数量: $(ls dsh-pet/assets/mov/*.mov 2>/dev/null | wc -l)"
 
       - name: 校验产物（hvc1 tag + alpha 通道真实存在）
