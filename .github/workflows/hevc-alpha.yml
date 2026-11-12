@@ -43,7 +43,7 @@ jobs:
     # 固定 macos-15：macos-14 的 arm64 runner 配置已下线（job 启动即被取消，
     # 注解为 configuration not supported）；不同 macOS 版本的 VideoToolbox 码率
     # 映射不同，换 runner 会改变 mov 体积，产物需重新核对
-    runs-on: macos-15
+    runs-on: macos-15-intel
     timeout-minutes: 120
     steps:
       - name: 检出本仓库（含插件素材与编码脚本）
